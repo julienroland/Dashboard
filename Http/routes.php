@@ -1,11 +1,9 @@
 <?php
 
-use Illuminate\Routing\Router;
-
-$router->group(['prefix' => LaravelLocalization::setLocale(), 'before' => 'LaravelLocalizationRedirectFilter|auth.admin'], function(Router $router)
+$router->group(['prefix' => LaravelLocalization::setLocale(), 'before' => 'LaravelLocalizationRedirectFilter|auth|admin'], function($router) use($config, $app)
 {
-	$router->group(['prefix' => Config::get('core::core.admin-prefix'), 'namespace' => 'Modules\Dashboard\Http\Controllers'], function(Router $router)
+    $router->group(['prefix' => $config->get('core::core.admin-prefix'), 'namespace' => 'Dashboard\Http\Controllers'], function($router) use($config, $app)
 	{
-		$router->get('/', ['as' => 'dashboard.index', 'uses' => 'Admin\DashboardController@index']);
+        $router->get('/', ['as' => 'dashboard.index', 'uses' => 'Admin\DashboardController@index']);
 	});
 });

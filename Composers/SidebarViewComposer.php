@@ -1,4 +1,4 @@
-<?php namespace Modules\Dashboard\Composers;
+<?php namespace \Dashboard\Composers;
 
 use Illuminate\Contracts\View\View;
 use Modules\Core\Composers\BaseSidebarViewComposer;

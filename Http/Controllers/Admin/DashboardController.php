@@ -1,7 +1,7 @@
-<?php namespace Modules\Dashboard\Http\Controllers\Admin;
+<?php namespace Dashboard\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\View;
-use Modules\Core\Http\Controllers\Admin\AdminBaseController;
+use Core\Http\Controllers\Admin\AdminBaseController;
 
 class DashboardController extends AdminBaseController
 {
@@ -9,4 +9,5 @@ class DashboardController extends AdminBaseController
     {
         return View::make('dashboard::admin.dashboard');
     }
+
 }
